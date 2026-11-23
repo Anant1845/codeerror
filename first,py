@@ -1,0 +1,54 @@
+29
+Program 29: Exception Handling in Python
+Aim
+To write a Python program to demonstrate exception handling using try, except, else, and finally.
+
+Python Code
+try:
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+
+    result = a / b
+
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero")
+
+except ValueError:
+    print("Error: Please enter valid numbers")
+
+else:
+    print("Division:", result)
+
+finally:
+    print("Program completed")
+
+Output 1: Normal Execution
+Enter first number: 20
+Enter second number: 5
+Division: 4.0
+Program completed
+Output 2: Exception Handling
+Enter first number: 20
+Enter second number: 0
+Error: Cannot divide by zero
+Program completed
+Easy Explanation
+Exception Handling: It is used to handle errors during program execution.
+try – Contains code that may generate an error.
+except – Handles the error.
+else – Executes when no exception occurs.
+finally – Executes whether an exception occurs or not.
+ZeroDivisionError – Occurs when a number is divided by zero.
+ValueError – Occurs when invalid input is converted into an integer.
+10 Viva Questions and Answers
+No.	Question	Answer
+1	What is exception handling?	Handling errors during program execution.
+2	Which keywords are used in exception handling?	try, except, else, finally.
+3	What is the use of try?	It contains risky code.
+4	What is the use of except?	It handles exceptions.
+5	What is the use of else?	It executes when no exception occurs.
+6	What is the use of finally?	It always executes after the try-except structure.
+7	What is ZeroDivisionError?	An error caused by division by zero.
+8	What is ValueError?	An error caused by an invalid value.
+9	Can we use multiple except blocks?	Yes.
+10	Why is exception handling important?	It prevents unexpected program termination and handles errors properly.
