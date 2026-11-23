@@ -1,9 +1,760 @@
-29
-Program 29: Exception Handling in Python
-Aim
-To write a Python program to demonstrate exception handling using try, except, else, and finally.
+1.# Create and write data into a file
+f = open("demo.txt", "w")
+f.write("Welcome to Python Programming")
+f.close()
 
-Python Code
+# Read data from file
+f = open("demo.txt", "r")
+data = f.read()
+
+print("File Contents:")
+print(data)
+
+f.close() 
+
+
+2.
+# Open first file in write mode
+f1 = open("file1.txt", "w")
+f1.write("Welcome to Python Programming")
+f1.close()
+
+# Read contents from first file
+f1 = open("file1.txt", "r")
+data = f1.read()
+f1.close()
+
+# Write contents into second file
+f2 = open("file2.txt", "w")
+f2.write(data)
+f2.close()
+
+print("Data copied successfully!")
+
+# Display second file contents
+f2 = open("file2.txt", "r")
+print("Contents of second file:")
+print(f2.read())
+f2.close()
+
+
+3.
+import os
+
+# 1. Get current directory
+print("1. Current Directory:", os.getcwd())
+
+# 2. Create a directory
+os.mkdir("MyFolder")
+print("2. Directory Created")
+
+# 3. List files and folders
+print("3. List:", os.listdir())
+
+# 4. Check directory exists
+print("4. Exists:", os.path.exists("MyFolder"))
+
+# 5. Check whether it is a directory
+print("5. Is Directory:", os.path.isdir("MyFolder"))
+
+# 6. Change current directory
+os.chdir("MyFolder")
+print("6. Changed Directory:", os.getcwd())
+
+# 7. Go back to previous directory
+os.chdir("..")
+print("7. Back to:", os.getcwd())
+
+# 8. Rename directory
+os.rename("MyFolder", "NewFolder")
+print("8. Directory Renamed")
+
+# 9. Get absolute path
+print("9. Absolute Path:", os.path.abspath("NewFolder"))
+
+# 10. Remove directory
+os.rmdir("NewFolder")
+print("10. Directory Removed")
+
+4.
+import matplotlib.pyplot as plt
+
+# Programming languages
+languages = ['Java', 'Python', 'PHP', 'JavaScript', 'C#', 'C++']
+
+# Popularity values
+popularity = [22.2, 17.6, 8.8, 8, 7.7, 6.7]
+
+# Create horizontal bar chart
+plt.barh(languages, popularity)
+
+# Add title and labels
+plt.title("Popularity of Programming Languages")
+plt.xlabel("Popularity")
+plt.ylabel("Programming Languages")
+
+# Display chart
+plt.show()
+
+5.
+import matplotlib.pyplot as plt
+
+# Data
+languages = ['Java', 'Python', 'PHP', 'C++']
+popularity = [30, 40, 20, 10]
+
+# Create pie chart
+plt.pie(popularity, labels=languages, autopct='%1.1f%%')
+
+# Add title
+plt.title("Programming Language Popularity")
+
+# Display chart
+plt.show()
+
+6.
+import tkinter as tk
+
+# Create main window
+root = tk.Tk()
+
+# Set window title
+root.title("My First GUI")
+
+# Set window size
+root.geometry("400x300")
+
+# Create label
+label = tk.Label(root, text="Welcome to Python GUI")
+label.pack()
+
+# Create button
+button = tk.Button(root, text="Click Me")
+button.pack()
+
+# Run application
+root.mainloop()
+
+7.
+# Create a class
+class Student:
+
+    # Constructor
+    def __init__(self, name, roll_no):
+        self.name = name
+        self.roll_no = roll_no
+
+    # Display student details
+    def display(self):
+        print("Student Name:", self.name)
+        print("Roll Number:", self.roll_no)
+
+
+# Create object
+s1 = Student("Anant", 108)
+
+# Call method
+s1.display()
+
+8.
+class Calculator:
+
+    def add(self, a, b=0, c=0):
+        print("Addition:", a + b + c)
+
+
+# Create object
+obj = Calculator()
+
+# Call method with different arguments
+obj.add(10, 20)
+obj.add(10, 20, 30)
+obj.add(10)
+
+
+# Parent class
+class Animal:
+
+    def sound(self):
+        print("Animal makes a sound")
+
+9.
+# Child class
+class Dog(Animal):
+
+    def sound(self):
+        print("Dog barks")
+
+
+# Create object
+obj = Dog()
+
+# Call method
+obj.sound()
+
+
+10.
+# Parent class
+class Father:
+
+    def show_father(self):
+        print("This is Father class")
+
+
+# Child class
+class Son(Father):
+
+    def show_son(self):
+        print("This is Son class")
+
+
+# Create object
+obj = Son()
+
+# Call methods
+obj.show_father()
+obj.show_son()
+
+11.
+# Grandparent class
+class Grandfather:
+
+    def show_grandfather(self):
+        print("This is Grandfather class")
+
+
+# Parent class
+class Father(Grandfather):
+
+    def show_father(self):
+        print("This is Father class")
+
+
+# Child class
+class Son(Father):
+
+    def show_son(self):
+        print("This is Son class")
+
+
+# Create object
+obj = Son()
+
+# Call methods
+obj.show_grandfather()
+obj.show_father()
+obj.show_son()
+
+12.
+# First parent class
+class Father:
+
+    def show_father(self):
+        print("This is Father class")
+
+
+# Second parent class
+class Mother:
+
+    def show_mother(self):
+        print("This is Mother class")
+
+
+# Child class
+class Son(Father, Mother):
+
+    def show_son(self):
+        print("This is Son class")
+
+
+# Create object
+obj = Son()
+
+# Call methods
+obj.show_father()
+obj.show_mother()
+obj.show_son()
+
+
+13.
+# Parent class
+class A:
+    def show_A(self):
+        print("Class A")
+
+
+# Single inheritance
+class B(A):
+    def show_B(self):
+        print("Class B")
+
+
+# Single inheritance
+class C(A):
+    def show_C(self):
+        print("Class C")
+
+
+# Multiple inheritance
+class D(B, C):
+    def show_D(self):
+        print("Class D")
+
+
+# Create object
+obj = D()
+
+# Call methods
+obj.show_A()
+obj.show_B()
+obj.show_C()
+obj.show_D()
+
+
+14.
+# Parent class
+class Father:
+
+    def show_father(self):
+        print("This is Father class")
+
+
+# First child class
+class Son(Father):
+
+    def show_son(self):
+        print("This is Son class")
+
+
+# Second child class
+class Daughter(Father):
+
+    def show_daughter(self):
+        print("This is Daughter class")
+
+
+# Create objects
+obj1 = Son()
+obj2 = Daughter()
+
+# Call methods
+obj1.show_father()
+obj1.show_son()
+
+obj2.show_father()
+obj2.show_daughter()
+
+
+15.
+import array
+
+# Create an array
+a = array.array('i', [10, 20, 30, 40, 50])
+
+print("Original Array:", a)
+
+# 1. append()
+a.append(60)
+print("Append:", a)
+
+# 2. insert()
+a.insert(1, 15)
+print("Insert:", a)
+
+# 3. remove()
+a.remove(30)
+print("Remove:", a)
+
+# 4. pop()
+a.pop()
+print("Pop:", a)
+
+# 5. index()
+print("Index:", a.index(40))
+
+# 6. count()
+print("Count:", a.count(20))
+
+# 7. reverse()
+a.reverse()
+print("Reverse:", a)
+
+# 8. extend()
+a.extend([70, 80])
+print("Extend:", a)
+
+# 9. buffer_info()
+print("Buffer Info:", a.buffer_info())
+
+# 10. tolist()
+print("To List:", a.tolist())
+
+16.
+# Create a list
+a = [10, 20, 30, 40, 50]
+
+print("Original List:", a)
+
+# 1. append()
+a.append(60)
+print("Append:", a)
+
+# 2. insert()
+a.insert(1, 15)
+print("Insert:", a)
+
+# 3. remove()
+a.remove(30)
+print("Remove:", a)
+
+# 4. pop()
+a.pop()
+print("Pop:", a)
+
+# 5. index()
+print("Index:", a.index(40))
+
+# 6. count()
+print("Count:", a.count(20))
+
+# 7. sort()
+a.sort()
+print("Sort:", a)
+
+# 8. reverse()
+a.reverse()
+print("Reverse:", a)
+
+# 9. extend()
+a.extend([70, 80])
+print("Extend:", a)
+
+# 10. copy()
+b = a.copy()
+print("Copy:", b)
+
+
+17.
+# Create a dictionary
+student = {
+    "name": "Anant",
+    "roll_no": 108,
+    "age": 21
+}
+
+print("Original Dictionary:", student)
+
+# 1. keys()
+print("Keys:", student.keys())
+
+# 2. values()
+print("Values:", student.values())
+
+# 3. items()
+print("Items:", student.items())
+
+# 4. get()
+print("Get Name:", student.get("name"))
+
+# 5. update()
+student.update({"city": "Kolhapur"})
+print("Update:", student)
+
+# 6. pop()
+student.pop("age")
+print("Pop:", student)
+
+# 7. copy()
+new_student = student.copy()
+print("Copy:", new_student)
+
+# 8. setdefault()
+student.setdefault("college", "Engineering")
+print("Setdefault:", student)
+
+# 9. popitem()
+student.popitem()
+print("Popitem:", student)
+
+# 10. clear()
+student.clear()
+print("Clear:", student)
+
+
+18.
+# Create a string
+s = "hello python programming"
+
+print("Original String:", s)
+
+# 1. upper()
+print("Upper:", s.upper())
+
+# 2. lower()
+print("Lower:", s.lower())
+
+# 3. capitalize()
+print("Capitalize:", s.capitalize())
+
+# 4. title()
+print("Title:", s.title())
+
+# 5. replace()
+print("Replace:", s.replace("python", "java"))
+
+# 6. find()
+print("Find:", s.find("python"))
+
+# 7. count()
+print("Count:", s.count("o"))
+
+# 8. split()
+print("Split:", s.split())
+
+# 9. startswith()
+print("Startswith:", s.startswith("hello"))
+
+# 10. endswith()
+print("Endswith:", s.endswith("programming"))
+
+19.
+t = (10, 20, 30, 20, 40)
+
+print("Original Tuple:", t)
+
+# 1. len()
+print("Length:", len(t))
+
+# 2. max()
+print("Maximum:", max(t))
+
+# 3. min()
+print("Minimum:", min(t))
+
+# 4. sum()
+print("Sum:", sum(t))
+
+# 5. sorted()
+print("Sorted:", sorted(t))
+
+# 6. tuple()
+print("Tuple Conversion:", tuple([1, 2, 3]))
+
+# 7. count()
+print("Count of 20:", t.count(20))
+
+# 8. index()
+print("Index of 30:", t.index(30))
+
+# 9. any()
+print("Any:", any(t))
+
+# 10. all()
+print("All:", all(t))
+
+
+20.
+s = {10, 20, 30, 40}
+
+print("Original Set:", sorted(s))
+
+# 1. add()
+s.add(50)
+print("After add:", sorted(s))
+
+# 2. update()
+s.update([60, 70])
+print("After update:", sorted(s))
+
+# 3. remove()
+s.remove(20)
+print("After remove:", sorted(s))
+
+# 4. discard() 
+s.discard(30)
+print("After discard:", sorted(s))
+
+# 5. pop()
+x = s.pop()
+print("Popped Element:", x)
+print("After pop:", sorted(s))
+
+# 6. union()
+a = {1, 2, 3}
+b = {3, 4, 5}
+print("Union:", sorted(a.union(b)))
+
+# 7. intersection()
+print("Intersection:", sorted(a.intersection(b)))
+
+# 8. difference()
+print("Difference:", sorted(a.difference(b)))
+
+# 9. symmetric_difference()
+print("Symmetric Difference:", sorted(a.symmetric_difference(b)))
+
+# 10. clear()
+s.clear()
+print("After clear:", s)
+
+
+21.
+# Normal Function
+def add(a, b):
+    return a + b
+
+def square(n):
+    return n * n
+
+print("Addition:", add(10, 20))
+print("Square:", square(5))
+
+
+# Lambda Function
+multiply = lambda a, b: a * b
+
+cube = lambda n: n * n * n
+
+print("Multiplication:", multiply(5, 4))
+print("Cube:", cube(3))
+
+
+23.
+import nltk
+from nltk.stem import PorterStemmer
+
+# Create Porter Stemmer object
+ps = PorterStemmer()
+
+words = ["playing", "played", "plays", "running", "runner"]
+
+print("Original Words and Stemmed Words:")
+   
+for word in words:
+    print(word, ":", ps.stem(word))
+
+
+24.
+import nltk
+from nltk.tokenize import word_tokenize, sent_tokenize
+
+# Download required resources
+nltk.download('punkt')
+nltk.download('punkt_tab')
+
+text = "Python is a programming language. It is easy to learn."
+
+# Word Tokenization
+words = word_tokenize(text)
+print("Word Tokenization:", words)
+
+# Sentence Tokenization
+sentences = sent_tokenize(text)
+print("Sentence Tokenization:", sentences)
+
+
+25.
+import numpy as np
+
+# Create an array
+arr = np.array([10, 20, 30, 40, 50])
+
+print("Original Array:", arr)
+
+# 1. Find array dimension
+print("Dimension:", arr.ndim)
+
+# 2. Find array size
+print("Size:", arr.size)
+
+# 3. Find array shape
+print("Shape:", arr.shape)
+
+# 4. Find maximum value
+print("Maximum:", np.max(arr))
+
+# 5. Find minimum value
+print("Minimum:", np.min(arr))
+
+# 6. Find sum
+print("Sum:", np.sum(arr))
+
+# 7. Find mean
+print("Mean:", np.mean(arr))
+
+# 8. Create zeros array
+print("Zeros:", np.zeros(3))
+
+# 9. Create ones array
+print("Ones:", np.ones(3))
+
+# 10. Reshape array
+print("Reshaped Array:")
+print(arr.reshape(5, 1))
+
+
+26.
+import pandas as pd
+
+# Create student records
+data = {
+    'Roll No': [1, 2, 3, 4],
+    'Name': ['Amit', 'Rahul', 'Sneha', 'Priya'],
+    'Marks': [85, 90, 78, 92]
+}
+
+# Create CSV file
+df = pd.DataFrame(data)
+df.to_csv('students.csv', index=False)
+
+# Read CSV file
+students = pd.read_csv('students.csv')
+
+# Display student records
+print("Student Records:")
+print(students)
+
+
+27.
+from abc import ABC, abstractmethod
+
+# Abstract Class
+class Animal(ABC):
+
+    @abstractmethod
+    def sound(self):
+        pass
+
+# Child Class
+class Dog(Animal):
+
+    def sound(self):
+        print("Dog barks")
+
+# Create object
+d = Dog()
+d.sound()
+
+
+
+28.
+# Create user-defined exception
+class AgeError(Exception):
+    pass
+
+try:
+    age = int(input("Enter your age: "))
+
+    if age < 18:
+        raise AgeError("Age must be 18 or above")
+
+    print("Eligible")
+
+except AgeError as e:
+    print("Error:", e)
+
+
+29.
 try:
     a = int(input("Enter first number: "))
     b = int(input("Enter second number: "))
@@ -21,34 +772,3 @@ else:
 
 finally:
     print("Program completed")
-
-Output 1: Normal Execution
-Enter first number: 20
-Enter second number: 5
-Division: 4.0
-Program completed
-Output 2: Exception Handling
-Enter first number: 20
-Enter second number: 0
-Error: Cannot divide by zero
-Program completed
-Easy Explanation
-Exception Handling: It is used to handle errors during program execution.
-try – Contains code that may generate an error.
-except – Handles the error.
-else – Executes when no exception occurs.
-finally – Executes whether an exception occurs or not.
-ZeroDivisionError – Occurs when a number is divided by zero.
-ValueError – Occurs when invalid input is converted into an integer.
-10 Viva Questions and Answers
-No.	Question	Answer
-1	What is exception handling?	Handling errors during program execution.
-2	Which keywords are used in exception handling?	try, except, else, finally.
-3	What is the use of try?	It contains risky code.
-4	What is the use of except?	It handles exceptions.
-5	What is the use of else?	It executes when no exception occurs.
-6	What is the use of finally?	It always executes after the try-except structure.
-7	What is ZeroDivisionError?	An error caused by division by zero.
-8	What is ValueError?	An error caused by an invalid value.
-9	Can we use multiple except blocks?	Yes.
-10	Why is exception handling important?	It prevents unexpected program termination and handles errors properly.
